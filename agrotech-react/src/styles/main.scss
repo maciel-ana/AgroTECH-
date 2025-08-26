@@ -1,0 +1,74 @@
+@use 'variables' as v;
+
+.landing {
+    position: relative;
+    background-image: url(../assets/fundo-landing.png);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+// Descrição 
+
+.descricao_hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: -150px;
+}
+
+.descricao {
+    background-color: v.$text-color;
+    border-radius: 50px;
+    padding: 2rem;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.caixas_hero {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 40px;
+    padding: 20px;
+}
+
+.caixas {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+}
+
+.caixas span {
+    color: v.$color-p;
+    font-size: 3rem;
+}
+
+.caixas h4 {
+    color: v.$color-p;
+    font-size: 1.3rem;
+}
+
+.caixas p {
+    text-align: justify;
+    font-weight: v.$font-weight;
+}
+
+.caixas .project_link {
+    text-align: left;
+    margin-top: auto;
+    width: 100%;
+}
+
+// Responsividade
+
+@media (max-width: 768px) {
+    // Descrição
+    .caixas_hero {
+        flex-direction: column;
+    }
+}

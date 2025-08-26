@@ -1,0 +1,53 @@
+@use '../../styles/variables' as v;
+
+body {
+  font-family: v.$font-family;
+  margin: 0;
+}
+
+.header-navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: column;
+}
+
+.logo_title {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.logo_title h3 {
+  color: v.$text-color; 
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0; 
+}
+
+.navbar {
+  display: flex; 
+  align-items: center;
+  background-color: v.$background-color-nav;
+  padding: 15px 40px;
+  border-radius: 20px;
+  gap: 60px;  
+}
+
+.navbar a {
+  color: v.$text-color; 
+  text-decoration: none; 
+  font-weight: 400;
+
+  &:hover {
+    color: v.$color-p; 
+  }
+}
+
+.navbar a.search {
+  font-size: 1.2rem;
+}
