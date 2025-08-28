@@ -1,46 +1,42 @@
+import React, { useRef } from 'react';
+import AboutSection from './components/AboutSection/AboutSection.jsx';
 import Header from './components/Header/Header.jsx'
 import HeroSection from './components/HeroSection/HeroSection.jsx'
+import OurProject from './components/OurProject/OurProject.jsx';
+import Questions from './components/Questions/Questions.jsx';
+import BackToTop from './components/BackToTop/BackToTop.jsx';
+import { useEffect, useState } from 'react';
 
 function App() {
+
+  const aboutSectionRef = useRef(null);
+  const ourProjectSectionRef = useRef(null);
+  const questionsSectionRef = useRef(null);
+
+  const scrollToSection = (ref) => {
+    window.scrollTo({
+      top: ref.current.offsetTop,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <>
-      <div className="landing">
-        <Header />
-        <HeroSection /> 
-      </div>
-      <section className='descricao_hero'>
-        <div className="descricao">
-          <div className="caixas_hero">
-            <div className="caixas">
-              <span className="material-symbols-outlined">grass</span>
-              <h4>Nosso Projeto</h4>
-              
-                <p>
-                  Este projeto usa tecnologia de ponta para monitorar lavouras com precisão, combinando sensores, IA e dados acessíveis. A proposta contribui com a ODS 2, promovendo uma produção agrícola mais eficiente, sustentável e voltada ao combate à fome.
-                </p>
-                <div className="project_link">
-                  <p>Segue o link do vídeo do projeto</p>
-                    <a href='#'>Clique aqui</a>
-                </div>
-            </div>
-            <div className="caixas">
-              <span className="material-symbols-outlined">domain</span>
-                <h4>Sobre a empresa</h4>
-                    <p>
-                      Somos um grupo de estudantes comprometidos com a inovação no campo. Este projeto foi desenvolvido como parte de um trabalho acadêmico com foco em soluções tecnológicas para a agricultura sustentável, alinhadas à ODS 2 da ONU. Acreditamos que, com tecnologia e propósito, é possível gerar impacto real.
-                        </p>
-                    </div>
-                    <div className="caixas">
-                        <span className="material-symbols-outlined">mail</span>
-                        <h4>Fale conosco</h4>
-                        <p>
-                           Quer saber como nossa tecnologia pode transformar sua lavoura e contribuir para uma agricultura mais eficiente e sustentável? Fale com a gente e descubra como fazer parte dessa mudança rumo ao combate à fome.
-                        </p>
-                    </div>
-                    <hr />
-                </div>
-            </div>
-        </section>
+    <div id='top' className="app-container">
+        <div className="landing">
+          <Header 
+          scrollToAbout={() => scrollToSection(aboutSectionRef)}
+          scrollToProject={() => scrollToSection(ourProjectSectionRef)}
+          scrollToQuestions={() => scrollToSection(questionsSectionRef)}
+          />
+          <HeroSection /> 
+        </div>
+        <AboutSection sectionRef={aboutSectionRef}/>
+        <OurProject sectionRef={ourProjectSectionRef}/>
+        {/* Colocar as outras seções aqui */}
+        <Questions sectionRef={questionsSectionRef}/>
+        <BackToTop />
+    </div>
     </>
   )
 }
