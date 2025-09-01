@@ -14,6 +14,8 @@ function App() {
   const aboutSectionRef = useRef(null);
   const ourProjectSectionRef = useRef(null);
   const questionsSectionRef = useRef(null);
+  const sobreempresaRef = useRef(null);
+  const faleconoscoRef = useRef(null);
 
   const scrollToSection = (ref) => {
     window.scrollTo({
@@ -30,12 +32,15 @@ function App() {
           scrollToAbout={() => scrollToSection(aboutSectionRef)}
           scrollToProject={() => scrollToSection(ourProjectSectionRef)}
           scrollToQuestions={() => scrollToSection(questionsSectionRef)}
+          scrollToSobreEmpresa={() => scrollToSection(sobreempresaRef)}
+          scrollToFaleConosco={() => scrollToSection(faleconoscoRef)}
           />
           <HeroSection /> 
         </div>
         <AboutSection sectionRef={aboutSectionRef}/>
         <OurProject sectionRef={ourProjectSectionRef}/>
-        {/* Colocar as outras seções aqui */}
+        <SobreEmpresa sectionRef={sobreempresaRef} />
+        <FaleConosco sectionRef={faleconoscoRef} />
         <Questions sectionRef={questionsSectionRef}/>
         <BackToTop />
     </div>

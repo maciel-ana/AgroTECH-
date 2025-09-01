@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import './Header.scss'
 
-function Header({ scrollToAbout, scrollToProject, scrollToQuestions}) {
+function Header({ scrollToAbout, scrollToProject, scrollToQuestions, scrollToSobreEmpresa,scrollToFaleConosco }) {
     const [menuAtivo, setMenuAtivo] = useState(false);
 
     const toggleMenu = () => {
         setMenuAtivo(!menuAtivo);
+    };
+
+    const handleScroll = (scrollFunction) => {
+        scrollFunction();
+        setMenuAtivo(false);
     };
 
     return (
@@ -18,9 +23,20 @@ function Header({ scrollToAbout, scrollToProject, scrollToQuestions}) {
             <nav className={`navbar ${menuAtivo ? 'navbar-ativa' : ''}`}>
                 <a onClick={scrollToAbout}>Sobre</a>
                 <a onClick={scrollToProject}>Nosso Projeto</a>
+                <a onClick={scrollToSobreEmpresa}>Sobre a Empresa</a>
+                <a onClick={scrollToFaleConosco}>Fale Conosco</a>
                 <a onClick={scrollToQuestions}>Perguntas</a>
-                <a href='#' className="search"><span className="material-symbols-outlined">search</span></a>
             </nav>
+
+            <button 
+            className={`menu-hamburguer ${menuAtivo ? 'ativo' : ''}`}
+            onClick={toggleMenu}
+            aria-label='Abrir Menu'
+            >
+                <div className="barra"></div>
+                <div className="barra"></div>
+                <div className="barra"></div>
+            </button>
         </header>
         </>
     );

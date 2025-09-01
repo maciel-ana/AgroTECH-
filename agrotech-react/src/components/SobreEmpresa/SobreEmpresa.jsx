@@ -2,9 +2,9 @@ import React from "react";
 import "./SobreEmpresa.scss";
 import cornfield from "../../assets/cornfield.png"; 
 
-export default function SobreEmpresa() {
+export default function SobreEmpresa({ sectionRef }) {
   return (
-    <section className="sobre-empresa-section">
+    <section ref={sectionRef} className="sobre-empresa-section">
       <div className="container">
         <div className="sobre-empresa">
           {/* Imagem */}
