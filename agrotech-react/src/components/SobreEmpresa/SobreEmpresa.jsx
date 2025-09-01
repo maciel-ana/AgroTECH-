@@ -1,5 +1,6 @@
-import React from 'react';
+import React from "react";
 import "./SobreEmpresa.scss";
+import cornfield from "../../assets/cornfield.png"; 
 
 export default function SobreEmpresa() {
   return (
@@ -8,13 +9,14 @@ export default function SobreEmpresa() {
         <div className="sobre-empresa">
           {/* Imagem */}
           <div className="sobre-img">
-            <img src="imgs/cornfield.png" alt="Sobre a empresa" />
+            <img src={cornfield} alt="Sobre a empresa" />
           </div>
 
           {/* Conteúdo */}
           <div className="sobre-content">
             <h2>Sobre a empresa</h2>
 
+            {/* Subtítulo */}
             <div className="subtitulo">
               <span>Nossa missão</span>
               <hr />
