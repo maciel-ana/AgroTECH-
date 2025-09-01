@@ -5,6 +5,8 @@ import HeroSection from './components/HeroSection/HeroSection.jsx'
 import OurProject from './components/OurProject/OurProject.jsx';
 import Questions from './components/Questions/Questions.jsx';
 import BackToTop from './components/BackToTop/BackToTop.jsx';
+import SobreEmpresa from "./components/SobreEmpresa/SobreEmpresa";
+import FaleConosco from "./components/FaleConosco/FaleConosco";
 import { useEffect, useState } from 'react';
 
 function App() {
