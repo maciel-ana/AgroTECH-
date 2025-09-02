@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Header.scss'
 
-function Header({ scrollToAbout, scrollToProject, scrollToQuestions, scrollToSobreEmpresa,scrollToFaleConosco }) {
+function Header({ scrollToAbout, scrollToProject, scrollToQuiz, scrollToQuestions, scrollToSobreEmpresa,scrollToFaleConosco }) {
     const [menuAtivo, setMenuAtivo] = useState(false);
 
     const toggleMenu = () => {
@@ -23,6 +23,7 @@ function Header({ scrollToAbout, scrollToProject, scrollToQuestions, scrollToSob
             <nav className={`navbar ${menuAtivo ? 'navbar-ativa' : ''}`}>
                 <a onClick={scrollToAbout}>Sobre</a>
                 <a onClick={scrollToProject}>Nosso Projeto</a>
+                <a onClick={scrollToQuiz}>Quiz Tech</a>
                 <a onClick={scrollToSobreEmpresa}>Sobre a Empresa</a>
                 <a onClick={scrollToFaleConosco}>Fale Conosco</a>
                 <a onClick={scrollToQuestions}>Perguntas</a>

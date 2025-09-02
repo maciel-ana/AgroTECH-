@@ -7,6 +7,7 @@ import Questions from './components/Questions/Questions.jsx';
 import BackToTop from './components/BackToTop/BackToTop.jsx';
 import SobreEmpresa from "./components/SobreEmpresa/SobreEmpresa";
 import FaleConosco from "./components/FaleConosco/FaleConosco";
+import TechQuiz from "./components/TechQuiz/TechQuiz";
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
   const questionsSectionRef = useRef(null);
   const sobreempresaRef = useRef(null);
   const faleconoscoRef = useRef(null);
+  const quizRef = useRef(null);
 
   const scrollToSection = (ref) => {
     window.scrollTo({
@@ -31,6 +33,7 @@ function App() {
           <Header 
           scrollToAbout={() => scrollToSection(aboutSectionRef)}
           scrollToProject={() => scrollToSection(ourProjectSectionRef)}
+          scrollToQuiz={() => scrollToSection(quizRef)}
           scrollToQuestions={() => scrollToSection(questionsSectionRef)}
           scrollToSobreEmpresa={() => scrollToSection(sobreempresaRef)}
           scrollToFaleConosco={() => scrollToSection(faleconoscoRef)}
@@ -39,6 +42,7 @@ function App() {
         </div>
         <AboutSection sectionRef={aboutSectionRef}/>
         <OurProject sectionRef={ourProjectSectionRef}/>
+        <TechQuiz sectionRef={quizRef}/>
         <SobreEmpresa sectionRef={sobreempresaRef} />
         <FaleConosco sectionRef={faleconoscoRef} />
         <Questions sectionRef={questionsSectionRef}/>
